@@ -1,12 +1,3 @@
-/* Importando OpenDyslexic via @font-face */
-@font-face {
-  font-family: 'OpenDyslexic';
-  src: url('OpenDyslexic-Regular.woff2') format('woff2'),
-       url('OpenDyslexic-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* RESET */
 * { box-sizing: border-box; margin:0; padding:0; }
 body { font-family: Arial, sans-serif; background:#f4f4f9; color:#000; display:flex; min-height:100vh; transition: 0.3s; }
@@ -84,10 +75,53 @@ body.dark-mode #dicas { background:#444; color:#f2f2f2; border-left-color:#2196F
 .content { display:none; flex-direction:column; padding:0 10px; }
 
 /* RESPONSIVIDADE */
-@media (max-width:768px){
-  #sidebar { position:fixed; top:0; left:0; height:100%; z-index:1000; }
-  #editorContainer { padding:10px; }
-  #menuToggle { top:10px; left:10px; }
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  #sidebar.show {
+    transform: translateY(0);
+  }
+
+  #editorContainer {
+    margin-left: 0 !important;
+    width: 100%;
+    padding: 10px;
+  }
+
+  #previewText {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  button,
+  select,
+  input[type="number"],
+  input[type="color"],
+  input[type="file"] {
+    width: 100%;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .collapsible {
+    font-size: 14px;
+  }
 }
+
 
 
