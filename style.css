@@ -1,8 +1,8 @@
 /* Importando OpenDyslexic via @font-face */
 @font-face {
   font-family: 'OpenDyslexic';
-  src: url('fonts/OpenDyslexic-Regular.woff2') format('woff2'),
-       url('fonts/OpenDyslexic-Regular.woff') format('woff');
+  src: url('OpenDyslexic-Regular.woff2') format('woff2'),
+       url('OpenDyslexic-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -89,3 +89,4 @@ body.dark-mode #dicas { background:#444; color:#f2f2f2; border-left-color:#2196F
   #editorContainer { padding:10px; }
   #menuToggle { top:10px; left:10px; }
 }
+
