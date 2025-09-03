@@ -1,0 +1,91 @@
+/* Importando OpenDyslexic via @font-face */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('fonts/OpenDyslexic-Regular.woff2') format('woff2'),
+       url('fonts/OpenDyslexic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* RESET */
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: Arial, sans-serif; background:#f4f4f9; color:#000; display:flex; min-height:100vh; transition: 0.3s; }
+
+/* MENU LATERAL */
+#sidebar {
+  width: 280px;
+  background:#e3f2fd;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  transition: transform 0.3s;
+}
+#sidebar.hidden { transform: translateX(-100%); }
+#sidebar h2 { text-align:center; margin-bottom:15px; }
+#sidebar label, #sidebar select, #sidebar input[type="number"], #sidebar input[type="color"], #sidebar input[type="file"], #sidebar button {
+  display:block; width:100%; margin-bottom:10px; font-size:14px;
+}
+#sidebar button { background:#0077ff; color:#fff; border:none; padding:10px; border-radius:6px; cursor:pointer; transition:0.3s; }
+#sidebar button:hover { background:#005fcc; }
+
+/* BOTAO TOGGLE */
+#menuToggle { position:fixed; top:20px; left:20px; z-index:1000; padding:10px; border:none; border-radius:6px; background:#0077ff; color:#fff; cursor:pointer; }
+
+/* ÁREA DE TEXTO */
+#editorContainer {
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:20px;
+  transition: all 0.3s;
+}
+#previewText {
+  width:100%;
+  max-width:1200px;
+  min-height:90vh;
+  padding:40px;
+  border-radius:12px;
+  background:#ffffff;
+  font-size:20px;
+  line-height:1.6;
+  overflow-y:auto;
+  white-space:pre-wrap;
+  outline:none;
+  letter-spacing:0.12em;
+  word-spacing:0.16em;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
+
+/* DICAS */
+#dicas {
+  background:#e8f4ff;
+  border-left:5px solid #2196F3;
+  padding:15px;
+  border-radius:8px;
+  display:none;
+  max-width:1200px;
+  margin:15px auto 0;
+}
+#dicas h3 { color:#0b3d91; margin-bottom:10px; }
+#dicas ul { padding-left:20px; }
+#dicas li { margin-bottom:5px; font-size:14px; }
+
+/* TEMA ESCURO */
+body.dark-mode { background:#1c1c1c; color:#f2f2f2; }
+body.dark-mode #sidebar { background:#333; color:#f2f2f2; }
+body.dark-mode #previewText { background:#2a2a2a; color:#f2f2f2; border-color:#555; }
+body.dark-mode #dicas { background:#444; color:#f2f2f2; border-left-color:#2196F3; }
+
+/* BOTÕES COLAPSÁVEIS */
+.collapsible { cursor:pointer; margin-bottom:5px; }
+.content { display:none; flex-direction:column; padding:0 10px; }
+
+/* RESPONSIVIDADE */
+@media (max-width:768px){
+  #sidebar { position:fixed; top:0; left:0; height:100%; z-index:1000; }
+  #editorContainer { padding:10px; }
+  #menuToggle { top:10px; left:10px; }
+}
